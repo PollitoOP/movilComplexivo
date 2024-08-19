@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E7F6FD"
+    tools:context=".HabitacionesActivity">
+
+    <!-- AppBar con Toolbar sin flecha de navegación -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#0A8ADC">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#0A8ADC"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <!-- Texto personalizado en la Toolbar -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Listado de Habitaciones"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:textSize="25sp"/>
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- FrameLayout para contener el contenido debajo del AppBar -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?attr/actionBarSize">
+
+        <!-- ScrollView para el contenido -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/linearLayoutHabitacionesContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- Campo de búsqueda -->
+                <EditText
+                    android:id="@+id/editTextBuscar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Buscar habitación"
+                    android:padding="12dp"
+                    android:background="@drawable/search_background" />
+
+                <!-- Botón para ir a CategoriasActivity -->
+                <Button
+                    android:id="@+id/buttonTipoHabitaciones"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tipo Habitaciones"
+                    android:layout_gravity="end"
+                    android:padding="12dp"
+                    android:backgroundTint="#0A8ADC"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold"
+                    android:layout_marginTop="8dp"/>
+
+                <!-- Lista de habitaciones se llenará aquí -->
+                <LinearLayout
+                    android:id="@+id/linearLayoutHabitaciones"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp" />
+
+            </LinearLayout>
+        </ScrollView>
+    </FrameLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
